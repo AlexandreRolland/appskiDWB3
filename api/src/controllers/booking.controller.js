@@ -6,6 +6,16 @@ const BookingController= {
         res.send(booking);
     },
 
+    getOne: async (req, res) => {
+        const { id } = req.params;
+        try {
+            const booking = await Booking.findById(id);
+            res.send(booking);
+        } catch (error) {
+            res.status(404).send({ message: 'Comment not found' });
+        }
+    },
+
     create: async (req, res) => {
         console.log(req.body);
         try {

@@ -29,6 +29,26 @@ const CommentController= {
             console.log(error);
             res.status(400).send({ message: 'Invalid comment data (create)' });
         }
+    },
+
+    update: async (req, res) => {
+        const { id } = req.params;
+        try {
+            const comment = await Comment.findByIdAndUpdate(id, req.body)
+            res.send(comment);
+        } catch (error) {
+            res.status(400).send({ message: 'Invalid post data (update)' });
+        }
+    },
+
+    delete: async (req, res) => {
+        const { id } = req.params;
+        try {
+            const comment = await Comment.findByIdAndDelete(id);
+            res.send("Comment deleted");
+        } catch (error) {
+            res.status(404).send({ message: 'Delete Comment not found' });
+        }
     }
 }
 
