@@ -19,11 +19,6 @@ const CommentController= {
     create: async (req, res) => {
         try {
             const comment = await new Comment(req.body).save();
-            // await Category.findByIdAndUpdate(post.category, { $push: { recipes: recipe._id } });
-            // const category = await Category.findById(recipe.category);
-            // category.recipes.push(recipe._id);
-            // await category.save();
-            
             res.send(comment);
         } catch (error) {
             console.log(error);
