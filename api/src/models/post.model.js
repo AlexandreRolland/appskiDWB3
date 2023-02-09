@@ -12,7 +12,7 @@ const postSchema = new Schema({
     CreatedAt: { type: Date, default: Date.now },
     bookings: { type: mongoose.SchemaTypes.ObjectId, ref: 'Booking'},
     comments: { type: mongoose.SchemaTypes.ObjectId, ref: 'Comment'},
-    shop: { type: mongoose.SchemaTypes.ObjectId, ref: 'Shop'},
+    shops: { type: mongoose.SchemaTypes.ObjectId, ref: 'Shop'},
     isAvailable: { type: Boolean, default: true},
 })
 

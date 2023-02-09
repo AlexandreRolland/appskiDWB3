@@ -4,6 +4,7 @@ const port = 8000
 const postRouter = require('./src/routers/post.router')
 const bookingRouter = require('./src/routers/booking.router')
 const commentRouter = require('./src/routers/comment.router')
+const shopRouter = require('./src/routers/shop.router')
 const mongoConnect = require('./config/mongo.connect')
 mongoConnect()
 
@@ -21,6 +22,8 @@ app.use(PREFIX_URL, postRouter)
 app.use(PREFIX_URL, bookingRouter)
 
 app.use(PREFIX_URL, commentRouter)
+
+app.use(PREFIX_URL, shopRouter)
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)

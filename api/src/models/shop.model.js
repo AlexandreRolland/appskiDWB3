@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const commentSchema = new Schema({
+const shopSchema = new Schema({
     name: { type: String, required: true },
     post: { type: mongoose.SchemaTypes.ObjectId, ref: 'Post'},
     adresse: { type: String, required: true },

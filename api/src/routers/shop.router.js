@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-const ShopController = require('../controllers/post.controller')
+const ShopController = require('../controllers/shop.controller')
 
 router.get("/shops", ShopController.getAll)
 router.get("/shops/:id", ShopController.getOne)
